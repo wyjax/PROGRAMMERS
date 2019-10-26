@@ -5,6 +5,7 @@ class Solution {
         else {
             return gcd(w, h % w);
         }
+        // 없으면 1로 간다.
     }
 
     public long solution(int w, int h) {
@@ -16,15 +17,12 @@ class Solution {
             h = w;
             w = tmp;
         }
-        if (w == 1)
-            return 0;
-        else if (w == h)
-            return avail - w;
 
-        int zz = gcd(h, w);
-        int x = w / zz;
-        int y = h / zz;
-        answer = (x + y - 1) * zz;
+        int z = gcd(h, w);
+
+        int x = w / z;
+        int y = h / z;
+        answer = (w + h - 1) * z;
         avail -= answer;
 
         return avail;
@@ -33,6 +31,6 @@ class Solution {
 
 public class Main {
     public static void main(String []args) {
-        System.out.println(new Solution().solution(5, 12));
+        System.out.println(new Solution().solution(8, 12));
     }
 }
