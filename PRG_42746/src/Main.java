@@ -8,7 +8,7 @@ class Solution {
         arr = new String[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
-            arr[i] = String.valueOf(numbers[i]);
+            arr[i] = Integer.toString(numbers[i]);
         }
 
         Arrays.sort(arr, new Comparator<String>() {
